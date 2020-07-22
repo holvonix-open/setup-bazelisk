@@ -31,8 +31,8 @@ function execStrict(cmd, cb) {
   });
 }
 
-execStrict(`sudo npm i -g @bazel/bazelisk@${pkgVer}`, () => {
-  execStrict("which bazelisk", () => {
-    execStrict("which bazel");
+execStrict(`mkdir ~/.bazelisknpm/p && cd ~/.bazelisknpm/p && npm i @bazel/bazelisk@${pkgVer}`, () => {
+  execStrict("PATH=~/.bazelisknpm/p/node_modules/.bin:$PATH which bazelisk && which bazel", () => {
+    console.log('::add-path::~/.bazelisknpm/p/node_modules/.bin')
   });
 });
