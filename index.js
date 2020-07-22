@@ -4,13 +4,15 @@ const fs = require('fs');
 
 const pkgVer = process.env['INPUT_BAZELISKVERSION'] || 'latest';
 
-if (!/^[A-Z0-9a-z\-\+\.\^\~]+$/.test(pkgVer)) {
+if (!/^[A-Z0-9a-z\-\+\.\^\~<>]+$/.test(pkgVer)) {
   console.error(`Invalid version \`${pkgVer}\``);
   process.exit(2);
   return;
 }
 
-const licenseText = fs.readFileSync('LICENSE', {encoding: 'UTF-8'});
+const licenseText = fs.readFileSync(
+  require('path').resolve(__dirname, 'LICENSE'),
+  { encoding: 'UTF-8' });
 
 console.log(licenseText);
 
