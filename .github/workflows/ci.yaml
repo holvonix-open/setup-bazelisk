@@ -2,6 +2,7 @@ on: [push, pull_request]
 
 jobs:
   runself:
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
