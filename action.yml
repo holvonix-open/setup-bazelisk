@@ -1,0 +1,14 @@
+name: Setup bazelisk for Bazel builds
+author: Holvonix LLC
+description: Installs the bazelisk binary for Bazel builds (including a `bazel` alias)
+inputs:
+  bazeliskVersion:
+    description: Version of @bazel/bazelisk npm package
+    required: true
+    default: latest
+runs:
+  using: node12
+  main: index.js
+branding:
+  icon: check
+  color: gray-dark

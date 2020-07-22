@@ -1,0 +1,17 @@
+{
+  "name": "setup-bazelisk",
+  "version": "0.1.0",
+  "description": "Installs the bazelisk binary for Bazel builds (including a `bazel` alias)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holvonix-open/setup-bazelisk.git"
+  },
+  "keywords": [],
+  "author": "Holvonix LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holvonix-open/setup-bazelisk/issues"
+  },
+  "homepage": "https://github.com/holvonix-open/setup-bazelisk#readme"
+}
