@@ -1,6 +1,6 @@
 {
   "name": "setup-bazelisk",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Installs the bazelisk binary for Bazel builds (including a `bazel` alias)",
   "main": "index.js",
   "repository": {

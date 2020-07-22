@@ -31,7 +31,7 @@ function execStrict(cmd, cb) {
   });
 }
 
-execStrict(`npm i -g @bazel/bazelisk@${pkgVer}`, () => {
+execStrict(`sudo npm i -g @bazel/bazelisk@${pkgVer}`, () => {
   execStrict("which bazelisk && bazelisk --version", () => {
     execStrict("which bazel && bazel --version");
   });
