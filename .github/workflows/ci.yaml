@@ -6,8 +6,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-      #- name: Run local action
-      #  uses: ./
+      - name: Run local action
+        uses: ./
       - run: which bazelisk
       - run: which bazel
       - run: bazelisk
