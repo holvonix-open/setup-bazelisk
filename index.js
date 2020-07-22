@@ -34,5 +34,6 @@ function execStrict(cmd, cb) {
 execStrict(`mkdir ~/.bazelisknpm && mkdir ~/.bazelisknpm/p && cd ~/.bazelisknpm/p && npm i @bazel/bazelisk@${pkgVer}`, () => {
   execStrict("PATH=~/.bazelisknpm/p/node_modules/.bin:$PATH which bazelisk bazel", () => {
     console.log('::add-path::~/.bazelisknpm/p/node_modules/.bin');
+    execStrict(`echo 'console.log("CWD: " + process.cwd());' >> ~/.bazelisknpm/p/node_modules/\@bazel/bazelisk/bazelisk.js'`);
   });
 });
