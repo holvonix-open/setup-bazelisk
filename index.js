@@ -36,6 +36,6 @@ const extraPath = `${process.env['HOME']}/.bazelisknpm/p/node_modules/.bin`;
 execStrict(`mkdir ~/.bazelisknpm && mkdir ~/.bazelisknpm/p && cd ~/.bazelisknpm/p && npm i @bazel/bazelisk@${pkgVer}`, () => {
   execStrict(`PATH=${extraPath}:$PATH which bazelisk bazel`, () => {
     console.log(`::add-path::${extraPath}`);
-    execStrict(`echo 'console.log("CWD: " + process.cwd());' >> ~/.bazelisknpm/p/node_modules/\@bazel/bazelisk/bazelisk.js'`);
+    execStrict(`echo 'console.log("CWD: " + process.cwd());' >> ~/.bazelisknpm/p/node_modules/\@bazel/bazelisk/bazelisk.js`);
   });
 });
