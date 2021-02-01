@@ -35,6 +35,8 @@ const extraPath = `${process.env['HOME']}/.bazelisknpm/p/node_modules/.bin`;
 
 execStrict(`mkdir ~/.bazelisknpm && mkdir ~/.bazelisknpm/p && cd ~/.bazelisknpm/p && npm i @bazel/bazelisk@${pkgVer}`, () => {
   execStrict(`PATH=${extraPath}:$PATH which bazelisk bazel`, () => {
-    console.log(`::add-path::${extraPath}`);
+    execStrict(`echo "${extraPath}" >> $GITHUB_PATH`, () => {
+      console.log(`Added bazelisk to path: ${extraPath}`);
+    });
   });
 });
